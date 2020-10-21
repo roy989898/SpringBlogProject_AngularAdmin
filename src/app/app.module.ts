@@ -9,6 +9,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
 import {environment} from '../environments/environment';
 
+
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -16,7 +19,7 @@ import {environment} from '../environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatSliderModule,
+    MatSliderModule, MatIconModule,
     BrowserAnimationsModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
   ],
