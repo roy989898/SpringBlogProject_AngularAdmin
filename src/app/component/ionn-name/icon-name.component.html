@@ -1,3 +1,3 @@
-<div class="d-flex align-items-center" style="opacity: 0.5">
-  <span><mat-icon fontSet="material-icons-outlined">home</mat-icon></span>Blog
+<div class="d-flex align-items-center" [ngStyle]="{'opacity':(active)?1:0.5}">
+  <span><mat-icon fontSet="material-icons-outlined">{{iconName}}</mat-icon></span>{{text}}
 </div>

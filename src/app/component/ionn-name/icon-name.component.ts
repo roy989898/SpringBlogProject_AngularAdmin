@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-icon-name',
@@ -9,6 +9,15 @@ export class IconNameComponent implements OnInit {
 
   constructor() {
   }
+
+  @Input()
+  iconName = '';
+
+  @Input()
+  text = '';
+
+  @Input()
+  active = true;
 
   ngOnInit(): void {
   }
