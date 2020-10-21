@@ -130,6 +130,7 @@
   },
   "defaultProject": "angular-blog-admin",
   "cli": {
-    "analytics": "9fe5f568-a2fe-46ca-b327-74d77b86ea03"
+    "analytics": "9fe5f568-a2fe-46ca-b327-74d77b86ea03",
+    "defaultCollection": "@datorama/akita"
   }
 }
