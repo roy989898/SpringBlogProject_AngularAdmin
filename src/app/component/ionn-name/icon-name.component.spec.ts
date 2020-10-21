@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { IonnNameComponent } from './ionn-name.component';
+import { IconNameComponent } from './icon-name.component';
 
 describe('IonnNameComponent', () => {
-  let component: IonnNameComponent;
-  let fixture: ComponentFixture<IonnNameComponent>;
+  let component: IconNameComponent;
+  let fixture: ComponentFixture<IconNameComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ IonnNameComponent ]
+      declarations: [ IconNameComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IonnNameComponent);
+    fixture = TestBed.createComponent(IconNameComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
