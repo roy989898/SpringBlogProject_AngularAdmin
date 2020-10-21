@@ -11,10 +11,14 @@ import {environment} from '../environments/environment';
 
 
 import {MatIconModule} from '@angular/material/icon';
+import { AdminTopBarComponent } from './component/admin-top-bar/admin-top-bar.component';
+import { IonnNameComponent } from './component/ionn-name/ionn-name.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AdminTopBarComponent,
+    IonnNameComponent
   ],
   imports: [
     BrowserModule,
