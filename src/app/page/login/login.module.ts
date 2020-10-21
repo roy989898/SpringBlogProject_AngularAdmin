@@ -15,7 +15,7 @@ const appRoutes: Routes = [
   declarations: [LoginComponent],
   imports: [
     CommonModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forChild(appRoutes)
   ]
 })
 export class LoginModule {
