@@ -5,9 +5,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
-import { environment } from '../environments/environment';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {AkitaNgDevtools} from '@datorama/akita-ngdevtools';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
