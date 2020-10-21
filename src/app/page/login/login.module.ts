@@ -3,7 +3,8 @@ import {CommonModule} from '@angular/common';
 import {LoginComponent} from './login.component';
 import {RouterModule, Routes} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -17,7 +18,10 @@ const appRoutes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(appRoutes),
+    MatFormFieldModule,
     MatButtonModule,
+    MatInputModule
+
 
   ]
 })
