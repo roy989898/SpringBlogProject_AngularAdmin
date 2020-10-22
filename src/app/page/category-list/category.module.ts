@@ -3,6 +3,8 @@ import {CommonModule} from '@angular/common';
 import {CategoryComponent} from './category.component';
 import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "../login/login.component";
+import {EditorModule} from 'primeng/editor';
+import {FormsModule} from "@angular/forms";
 
 const appRoutes: Routes = [
   {path: '', component: CategoryComponent},
@@ -15,7 +17,9 @@ const appRoutes: Routes = [
   declarations: [CategoryComponent],
   imports: [
     CommonModule,
+    EditorModule,
     RouterModule.forChild(appRoutes),
+    FormsModule,
   ]
 })
 export class CategoryModule {

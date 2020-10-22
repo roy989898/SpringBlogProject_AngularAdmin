@@ -7,7 +7,7 @@ import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreServic
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-
+  text: string;
   constructor(private topBarStoreService: TopBarStoreService) {
     topBarStoreService.updateTopState(false, true, false, true);
 
