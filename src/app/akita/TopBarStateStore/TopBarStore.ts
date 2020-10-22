@@ -8,7 +8,6 @@ export interface TopBarState {
   topBarShow: boolean;
 }
 
-
 export function createInitialState(): TopBarState {
   return {
     blogBtOn: false,

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {TopBarQuery} from "../../akita/TopBarStateStore/TopBarQuery";
 
 @Component({
   selector: 'app-admin-top-bar',
@@ -18,7 +19,11 @@ export class AdminTopBarComponent implements OnInit {
   tab3Text = 'About Me';
   tab3Active = false;
 
-  constructor() {
+  tab1Active$ = this.topBarQuery.blogBtOn$;
+  tab2Active$ = this.topBarQuery.categoryBtOn$;
+  tab3Active$ = this.topBarQuery.aboutMeBtOn$;
+
+  constructor(private topBarQuery: TopBarQuery) {
   }
 
 

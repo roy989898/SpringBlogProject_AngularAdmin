@@ -7,6 +7,11 @@ import {Injectable} from "@angular/core";
 })
 export class TopBarQuery extends Query<TopBarState> {
 
+  topBarDisplay$ = this.select('topBarShow');
+  blogBtOn$ = this.select('blogBtOn');
+  categoryBtOn$ = this.select('CategoryBtOn');
+  aboutMeBtOn$ = this.select('AboutMeBtOn');
+
   constructor(protected store: TopBarStore) {
     super(store);
   }

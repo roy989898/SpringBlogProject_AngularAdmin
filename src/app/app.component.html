@@ -1,4 +1,4 @@
-<app-admin-top-bar></app-admin-top-bar>
+<app-admin-top-bar *ngIf="topBarDisplay$|async"></app-admin-top-bar>
 
 <router-outlet></router-outlet>
 
