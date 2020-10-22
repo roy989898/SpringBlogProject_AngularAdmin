@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {AdminTopBarComponent} from './component/admin-top-bar/admin-top-bar.component';
 import {IconNameComponent} from './component/ionn-name/icon-name.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {AtomSpinnerModule, BreedingRhombusSpinnerModule} from 'angular-epic-spinners';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
+    AtomSpinnerModule,
+    BreedingRhombusSpinnerModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
   ],
 

@@ -1,5 +1,9 @@
 <app-admin-top-bar *ngIf="topBarDisplay$|async"></app-admin-top-bar>
 
 <router-outlet></router-outlet>
-
+<app-breeding-rhombus-spinner class="centered" *ngIf="isLoading$|async"
+                              [animationDuration]="1000"
+                              [size]="60"
+                              [color]="'#ff1d5e'"
+></app-breeding-rhombus-spinner>
 <!--<mat-slider min="1" max="100" step="1" value="1"></mat-slider>-->

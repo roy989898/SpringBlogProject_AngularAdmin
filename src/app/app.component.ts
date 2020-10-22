@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {TopBarQuery} from "./akita/TopBarStateStore/TopBarQuery";
+import {MainLoadingQuery} from "./akita/MainLoadingStore/MainLoadingQuery";
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,9 @@ export class AppComponent {
   blogBtOn$ = this.topBarQuery.blogBtOn$;
   categoryBtOn$ = this.topBarQuery.categoryBtOn$;
   aboutMeBtOn$ = this.topBarQuery.aboutMeBtOn$;
+  isLoading$ = this.mainLoadingQuery.isLoadingme$;
 
-  constructor(private topBarQuery: TopBarQuery) {
+  constructor(private topBarQuery: TopBarQuery, private mainLoadingQuery: MainLoadingQuery) {
   }
 
 
