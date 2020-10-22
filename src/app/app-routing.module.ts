@@ -8,6 +8,10 @@ const routes: Routes = [
     loadChildren: () => import('./page/login/login.module').then(m => m.LoginModule)
   },
   {
+    path: 'category',
+    loadChildren: () => import('./page/category/category.module').then(m => m.CategoryModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
