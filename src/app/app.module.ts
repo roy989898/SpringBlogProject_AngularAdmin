@@ -15,6 +15,7 @@ import {AdminTopBarComponent} from './component/admin-top-bar/admin-top-bar.comp
 import {IconNameComponent} from './component/ionn-name/icon-name.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AtomSpinnerModule, BreedingRhombusSpinnerModule} from 'angular-epic-spinners';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {AtomSpinnerModule, BreedingRhombusSpinnerModule} from 'angular-epic-spin
     AtomSpinnerModule,
     BreedingRhombusSpinnerModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
+    NgbModule,
   ],
 
   providers: [],

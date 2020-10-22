@@ -5,6 +5,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {LoginComponent} from "../login/login.component";
 import {EditorModule} from 'primeng/editor';
 import {FormsModule} from "@angular/forms";
+import {MatButtonModule} from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
 
 const appRoutes: Routes = [
   {path: '', component: CategoryComponent},
@@ -20,6 +22,8 @@ const appRoutes: Routes = [
     EditorModule,
     RouterModule.forChild(appRoutes),
     FormsModule,
+    MatButtonModule,
+    MatTableModule
   ]
 })
 export class CategoryModule {
