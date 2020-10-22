@@ -11,8 +11,9 @@ import {environment} from '../environments/environment';
 
 
 import {MatIconModule} from '@angular/material/icon';
-import { AdminTopBarComponent } from './component/admin-top-bar/admin-top-bar.component';
-import { IconNameComponent } from './component/ionn-name/icon-name.component';
+import {AdminTopBarComponent} from './component/admin-top-bar/admin-top-bar.component';
+import {IconNameComponent} from './component/ionn-name/icon-name.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { IconNameComponent } from './component/ionn-name/icon-name.component';
     AppRoutingModule,
     MatSliderModule, MatIconModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
   ],
 

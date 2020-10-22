@@ -8,18 +8,18 @@ import {Component, OnInit} from '@angular/core';
 export class AdminTopBarComponent implements OnInit {
   tab1Icon = 'home';
   tab1Text = 'Blog';
-  tab1Active = true;
+  tab1Active = false;
 
   tab2Icon = 'category';
   tab2Text = 'Category';
-  tab2Active = true;
+  tab2Active = false;
 
   tab3Icon = 'account_circle';
   tab3Text = 'About Me';
   tab3Active = false;
+
   constructor() {
   }
-
 
 
   ngOnInit(): void {
