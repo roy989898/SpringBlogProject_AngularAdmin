@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'category',
-    loadChildren: () => import('./page/category/category.module').then(m => m.CategoryModule)
+    loadChildren: () => import('./page/category-list/category.module').then(m => m.CategoryModule)
   },
   {
     path: '',
