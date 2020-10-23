@@ -1,7 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import "~@angular/material/theming";
+@import '/src/app/variables';
+.my-primary-text {
+  color: mat-color($primaryPalette);
+}
+
+.my-accent-text {
+  color: mat-color($accentPalette);
+}
+
+.my-warn-text {
+  color: mat-color($warnPalette);
+}
 
 /* Importing Bootstrap SCSS file. */
 //@import '~bootstrap/scss/bootstrap';

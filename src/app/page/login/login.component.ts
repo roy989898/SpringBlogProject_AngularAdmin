@@ -14,13 +14,6 @@ import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
-  /*
-    loginForm = new FormGroup({
-      name: new FormControl(''),
-      password: new FormControl(''),
-    });
-  */
   hide = true;
   loginForm = this.fb.group({
     name: ['', [Validators.required]],
@@ -41,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.mainLoadingStoreService.updateState(true);
     await delay(2000);
     this.mainLoadingStoreService.updateState(false);
-    // await this.router.navigateByUrl('/category');
+    await this.router.navigateByUrl('/category');
 
   }
 
