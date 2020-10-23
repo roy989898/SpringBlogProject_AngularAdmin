@@ -22,7 +22,12 @@ export class AboutMeComponent implements OnInit {
     return this.base64Head + this.icon;
   }
 
-  // aboutMeForm
+  aboutMeForm = this.fb.group({
+    name: [''],
+    email: [''],
+    phone: [''],
+    about: [''],
+  });
 
   constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder) {
     topBarStoreService.updateTopState(false, false, true, true);
@@ -34,6 +39,17 @@ export class AboutMeComponent implements OnInit {
 
   save(): void {
     //  TODO
+
+    // this.aboutMeForm.get('name').value
+    // picture
+    // icon
+    console.log(this.aboutMeForm.value);
+    this.aboutMeForm.setValue({
+      name: 'new',
+      email: 'new',
+      phone: 'new',
+      about: 'new'
+    });
   }
 
   async pictureSelect(evt): Promise<void> {
@@ -61,7 +77,7 @@ export class AboutMeComponent implements OnInit {
         // data:image/jpeg;base64,
         let result = reader.result as string;
         result = result.replace(this.base64Head, '');
-        console.log(reader.result);
+        // console.log(reader.result);
         // @ts-ignore
         resolve(result);
       };
