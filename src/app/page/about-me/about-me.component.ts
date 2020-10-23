@@ -16,8 +16,18 @@ export class AboutMeComponent implements OnInit {
   }
 
 
-  save() {
+  save(): void {
     //  TODO
+  }
+
+  pictureSelect(evt): void {
+
+    console.log(evt);
+
+  }
+
+  iconSelect(evt): void {
+    console.log(evt);
   }
 
 }

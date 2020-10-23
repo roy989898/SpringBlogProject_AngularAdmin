@@ -24,8 +24,23 @@
 
     </mat-form-field>
 
-
   </form>
+
+
+  <div class="form-field">
+    <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none"/>
+    <button type="button" mat-raised-button color="primary" (click)="pictureInput.click()">
+      Picture
+    </button>
+  </div>
+
+
+  <input #iconInput type="file" accept="image/*" (change)="iconSelect($event)" style="display: none"/>
+  <button type="button" mat-raised-button color="primary" (click)="iconInput.click()" class="mt-2">
+    Icon
+  </button>
+
+
   <div class="d-flex flex-row-reverse">
     <button mat-raised-button color="primary" (click)="save()">Save</button>
   </div>
