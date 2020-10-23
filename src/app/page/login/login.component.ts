@@ -4,6 +4,7 @@ import {MainLoadingStoreService} from "../../akita/MainLoadingStore/main-loading
 import delay from 'await-delay';
 import {Router} from '@angular/router';
 import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,20 @@ import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreServic
 })
 export class LoginComponent implements OnInit {
 
+  /*
+    loginForm = new FormGroup({
+      name: new FormControl(''),
+      password: new FormControl(''),
+    });
+  */
+
+  loginForm = this.fb.group({
+    name: [''],
+    password: [''],
+  });
 
   constructor(private mainLoadingStoreService: MainLoadingStoreService, private router: Router
-    , private topBarStoreService: TopBarStoreService) {
+    , private topBarStoreService: TopBarStoreService, private fb: FormBuilder) {
     topBarStoreService.updateTopState(false, false, false, false);
   }
 
@@ -23,10 +35,11 @@ export class LoginComponent implements OnInit {
 
 
   async loginClick(): Promise<void> {
+    console.warn(this.loginForm.value);
     this.mainLoadingStoreService.updateState(true);
     await delay(2000);
     this.mainLoadingStoreService.updateState(false);
-    await this.router.navigateByUrl('/category');
+    // await this.router.navigateByUrl('/category');
 
   }
 

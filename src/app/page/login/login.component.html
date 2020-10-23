@@ -3,19 +3,20 @@
 
 
   <div style="display: flex;align-items: center;flex-direction: column">
-    <div class="example-form">
+    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginClick()">
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
-        <input matInput>
+        <input matInput type="text"  formControlName="name">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput>
+        <input matInput formControlName="password">
       </mat-form-field>
-    </div>
+      <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
+    </form>
 
-    <button mat-raised-button color="primary" (click)="loginClick()">Login</button>
+
 
   </div>
 
