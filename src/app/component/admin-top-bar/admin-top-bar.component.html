@@ -15,7 +15,10 @@
 <mat-toolbar color="primary">
   <h1 style="margin-bottom: 0">Admin</h1>
   <!--  <span class="example-spacer"></span>-->
-  <app-icon-name [iconName]="tab1Icon" [text]="tab1Text" [active]="tab1Active$|async"></app-icon-name>
-  <app-icon-name [iconName]="tab2Icon" [text]="tab2Text" [active]="tab2Active$|async"></app-icon-name>
-  <app-icon-name [iconName]="tab3Icon" [text]="tab3Text" [active]="tab3Active$|async"></app-icon-name>
+  <app-icon-name [iconName]="tab1Icon" [text]="tab1Text" [active]="tab1Active$|async"
+                 (click)="blogClick()"></app-icon-name>
+  <app-icon-name [iconName]="tab2Icon" [text]="tab2Text" [active]="tab2Active$|async"
+                 (click)="categoryClick()"></app-icon-name>
+  <app-icon-name [iconName]="tab3Icon" [text]="tab3Text" [active]="tab3Active$|async"
+                 (click)="aboutMeClick()"></app-icon-name>
 </mat-toolbar>

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TopBarQuery} from "../../akita/TopBarStateStore/TopBarQuery";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-admin-top-bar',
@@ -23,11 +24,22 @@ export class AdminTopBarComponent implements OnInit {
   tab2Active$ = this.topBarQuery.categoryBtOn$;
   tab3Active$ = this.topBarQuery.aboutMeBtOn$;
 
-  constructor(private topBarQuery: TopBarQuery) {
+  constructor(private topBarQuery: TopBarQuery, private router: Router) {
   }
 
 
   ngOnInit(): void {
   }
 
+  blogClick(): void {
+    // this.router.navigateByUrl('/category');
+  }
+
+  categoryClick(): void {
+    this.router.navigateByUrl('/category');
+  }
+
+  aboutMeClick(): void {
+    this.router.navigateByUrl('/aboutme');
+  }
 }

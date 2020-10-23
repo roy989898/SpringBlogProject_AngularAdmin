@@ -16,6 +16,7 @@ import {IconNameComponent} from './component/ionn-name/icon-name.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AtomSpinnerModule, BreedingRhombusSpinnerModule} from 'angular-epic-spinners';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AboutMeComponent } from './page/about-me/about-me.component';
 
 @NgModule({
   declarations: [
