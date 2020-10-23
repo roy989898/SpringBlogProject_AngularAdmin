@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
 
 @Component({
@@ -13,6 +13,11 @@ export class AboutMeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+
+  save() {
+    //  TODO
   }
 
 }

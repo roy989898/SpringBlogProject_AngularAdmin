@@ -2,6 +2,9 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {AboutMeComponent} from "./about-me.component";
 import {RouterModule, Routes} from "@angular/router";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
 
 const appRoutes: Routes = [
   {path: '', component: AboutMeComponent},
@@ -17,6 +20,9 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forChild(appRoutes),
     CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
   ]
 })
 export class AboutMeModule {
