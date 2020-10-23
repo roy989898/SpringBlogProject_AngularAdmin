@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
       password: new FormControl(''),
     });
   */
-
+  hide = true;
   loginForm = this.fb.group({
     name: [''],
     password: [''],

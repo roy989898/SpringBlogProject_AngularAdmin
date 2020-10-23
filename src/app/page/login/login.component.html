@@ -3,19 +3,24 @@
 
 
   <div style="display: flex;align-items: center;flex-direction: column">
-    <form class="example-form" [formGroup]="loginForm" (ngSubmit)="loginClick()">
+    <form class="example-form" [formGroup]="loginForm">
       <mat-form-field class="example-full-width">
         <mat-label>Name</mat-label>
-        <input matInput type="text"  formControlName="name">
+        <input matInput type="text" formControlName="name">
       </mat-form-field>
 
       <mat-form-field class="example-full-width">
         <mat-label>Password</mat-label>
-        <input matInput formControlName="password">
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
       </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="!loginForm.valid">Login</button>
-    </form>
 
+
+      <button mat-raised-button color="primary" [disabled]="!loginForm.valid" (click)="loginClick()">Login</button>
+    </form>
 
 
   </div>
