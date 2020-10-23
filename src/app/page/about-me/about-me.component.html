@@ -26,7 +26,7 @@
 
   </form>
 
-  <img [src]="picture" class="preview-image" *ngIf="picture">
+  <img [src]="pictureBase64" class="preview-image" *ngIf="picture">
   <div class="form-field">
     <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none"/>
     <button type="button" mat-raised-button color="primary" (click)="pictureInput.click()">
@@ -34,7 +34,7 @@
     </button>
   </div>
 
-  <img [src]="icon" class="preview-image mt-2" *ngIf="icon">
+  <img [src]="iconBase64" class="preview-image mt-2" *ngIf="icon">
   <br>
   <input #iconInput type="file" accept="image/*" (change)="iconSelect($event)" style="display: none"/>
 

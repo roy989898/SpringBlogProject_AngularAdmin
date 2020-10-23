@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-about-me',
@@ -11,7 +12,19 @@ export class AboutMeComponent implements OnInit {
   picture: string = null;
   icon: string = null;
 
-  constructor(private topBarStoreService: TopBarStoreService) {
+  private base64Head = 'data:image/jpeg;base64,';
+
+  get pictureBase64(): string {
+    return this.base64Head + this.picture;
+  }
+
+  get iconBase64(): string {
+    return this.base64Head + this.icon;
+  }
+
+  // aboutMeForm
+
+  constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder) {
     topBarStoreService.updateTopState(false, false, true, true);
   }
 
@@ -44,8 +57,13 @@ export class AboutMeComponent implements OnInit {
       reader.onload = () => {
         // me.modelvalue = reader.result;
         // console.log(reader.result);
+
+        // data:image/jpeg;base64,
+        let result = reader.result as string;
+        result = result.replace(this.base64Head, '');
+        console.log(reader.result);
         // @ts-ignore
-        resolve(reader.result);
+        resolve(result);
       };
       reader.onerror = error => {
         // console.log('Error: ', error);
