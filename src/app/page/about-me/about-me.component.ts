@@ -9,6 +9,8 @@ import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreServic
 export class AboutMeComponent implements OnInit {
 
   picture: string = null;
+  icon: string = null;
+
   constructor(private topBarStoreService: TopBarStoreService) {
     topBarStoreService.updateTopState(false, false, true, true);
   }
@@ -23,14 +25,14 @@ export class AboutMeComponent implements OnInit {
 
   async pictureSelect(evt): Promise<void> {
     const result = await this.getBase64(evt);
-    console.log(result);
     this.picture = result;
 
   }
 
   async iconSelect(evt): Promise<void> {
     const result = await this.getBase64(evt);
-    console.log(result);
+    this.icon = result;
+
   }
 
   getBase64(event): Promise<string> {
