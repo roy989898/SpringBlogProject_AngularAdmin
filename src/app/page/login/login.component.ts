@@ -4,7 +4,7 @@ import {MainLoadingStoreService} from "../../akita/MainLoadingStore/main-loading
 import delay from 'await-delay';
 import {Router} from '@angular/router';
 import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 // import { Validators } from '@angular/forms';
 
@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit {
   */
   hide = true;
   loginForm = this.fb.group({
-    name: ['', Validators.required],
-    password: ['', Validators.required],
+    name: ['', [Validators.required]],
+    password: ['', [Validators.required]],
   });
 
   constructor(private mainLoadingStoreService: MainLoadingStoreService, private router: Router
@@ -37,12 +37,20 @@ export class LoginComponent implements OnInit {
 
 
   async loginClick(): Promise<void> {
-    console.warn(this.loginForm.value);
+    console.warn(this.loginForm);
     this.mainLoadingStoreService.updateState(true);
     await delay(2000);
     this.mainLoadingStoreService.updateState(false);
     // await this.router.navigateByUrl('/category');
 
+  }
+
+  get name(): AbstractControl {
+    return this.loginForm.get('name');
+  }
+
+  get password(): AbstractControl {
+    return this.loginForm.get('password');
   }
 
 }
