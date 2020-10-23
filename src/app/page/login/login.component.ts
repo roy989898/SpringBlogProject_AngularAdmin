@@ -4,7 +4,9 @@ import {MainLoadingStoreService} from "../../akita/MainLoadingStore/main-loading
 import delay from 'await-delay';
 import {Router} from '@angular/router';
 import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+
+// import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -21,8 +23,8 @@ export class LoginComponent implements OnInit {
   */
   hide = true;
   loginForm = this.fb.group({
-    name: [''],
-    password: [''],
+    name: ['', Validators.required],
+    password: ['', Validators.required],
   });
 
   constructor(private mainLoadingStoreService: MainLoadingStoreService, private router: Router
