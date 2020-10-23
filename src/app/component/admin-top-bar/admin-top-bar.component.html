@@ -21,4 +21,13 @@
                  (click)="categoryClick()"></app-icon-name>
   <app-icon-name [iconName]="tab3Icon" [text]="tab3Text" [active]="tab3Active$|async"
                  (click)="aboutMeClick()"></app-icon-name>
+
+  <button mat-button [matMenuTriggerFor]="menu" class="ml-auto">
+    <img [src]="icon" alt="" class="small_img_icon_rounded">
+
+    {{name}}
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">Logout</button>
+  </mat-menu>
 </mat-toolbar>

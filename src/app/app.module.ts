@@ -17,6 +17,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {AtomSpinnerModule, BreedingRhombusSpinnerModule} from 'angular-epic-spinners';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AboutMeComponent } from './page/about-me/about-me.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AboutMeComponent } from './page/about-me/about-me.component';
     BreedingRhombusSpinnerModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     NgbModule,
+    MatMenuModule
   ],
 
   providers: [],

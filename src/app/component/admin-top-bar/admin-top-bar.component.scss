@@ -9,3 +9,9 @@ $hPadding: 2rem;
   padding-left: $hPadding;
   padding-right: $hPadding;
 }
+img.small_img_icon_rounded {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
