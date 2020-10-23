@@ -8,6 +8,7 @@ import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreServic
 })
 export class AboutMeComponent implements OnInit {
 
+  picture: string = null;
   constructor(private topBarStoreService: TopBarStoreService) {
     topBarStoreService.updateTopState(false, false, true, true);
   }
@@ -20,14 +21,37 @@ export class AboutMeComponent implements OnInit {
     //  TODO
   }
 
-  pictureSelect(evt): void {
-
-    console.log(evt);
+  async pictureSelect(evt): Promise<void> {
+    const result = await this.getBase64(evt);
+    console.log(result);
+    this.picture = result;
 
   }
 
-  iconSelect(evt): void {
-    console.log(evt);
+  async iconSelect(evt): Promise<void> {
+    const result = await this.getBase64(evt);
+    console.log(result);
+  }
+
+  getBase64(event): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const me = this;
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        // me.modelvalue = reader.result;
+        // console.log(reader.result);
+        // @ts-ignore
+        resolve(reader.result);
+      };
+      reader.onerror = error => {
+        // console.log('Error: ', error);
+        reject(error);
+      };
+    });
+
+
   }
 
 }
