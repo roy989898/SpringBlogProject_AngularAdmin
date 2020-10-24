@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./page/about-me/about-me.module').then(m => m.AboutMeModule)
   },
   {
+    path: 'bloglist',
+    loadChildren: () => import('./page/blog-list/blog-list.module').then(m => m.BlogListModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
