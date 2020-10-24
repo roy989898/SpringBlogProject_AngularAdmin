@@ -36,7 +36,7 @@ export class AdminTopBarComponent implements OnInit {
   }
 
   blogClick(): void {
-    // this.router.navigateByUrl('/category');
+    this.router.navigateByUrl('/bloglist');
   }
 
   categoryClick(): void {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
 
 @Component({
   selector: 'app-blog-list',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private topBarStoreService: TopBarStoreService) {
+    topBarStoreService.updateTopState(true, false, false, true);
+
+  }
 
   ngOnInit(): void {
   }
