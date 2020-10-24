@@ -28,4 +28,12 @@ export let fakeBlogListData: BlogListItem[] = [
   {id: 2, title: "blog2", recommended: false, published: false, updateTime: new Date()},
   {id: 3, title: "blog3", recommended: true, published: false, updateTime: new Date()},
   {id: 4, title: "blog4", recommended: false, published: false, updateTime: new Date()},
+  {id: 0, title: "blog1", recommended: true, published: false, updateTime: new Date()},
+  {id: 2, title: "blog2", recommended: false, published: false, updateTime: new Date()},
+  {id: 3, title: "blog3", recommended: true, published: false, updateTime: new Date()},
+  {id: 4, title: "blog4", recommended: false, published: false, updateTime: new Date()},
+  {id: 0, title: "blog1", recommended: true, published: false, updateTime: new Date()},
+  {id: 2, title: "blog2", recommended: false, published: false, updateTime: new Date()},
+  {id: 3, title: "blog3", recommended: true, published: false, updateTime: new Date()},
+  {id: 4, title: "blog4", recommended: false, published: false, updateTime: new Date()},
 ];
