@@ -5,6 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {MatTableModule} from '@angular/material/table';
 import {MatButtonModule} from "@angular/material/button";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatSortModule} from "@angular/material/sort";
 
 const appRoutes: Routes = [
   {path: '', component: BlogListComponent},
@@ -20,7 +21,8 @@ const appRoutes: Routes = [
     CommonModule,
     MatTableModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class BlogListModule {

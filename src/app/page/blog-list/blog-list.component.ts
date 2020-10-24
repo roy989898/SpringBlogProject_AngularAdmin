@@ -3,6 +3,7 @@ import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreServic
 import {BlogListItem, fakeBlogListData} from "../../FakeData";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
+import {MatSort} from "@angular/material/sort";
 
 @Component({
   selector: 'app-blog-list',
@@ -13,7 +14,7 @@ import {MatTableDataSource} from "@angular/material/table";
 
 export class BlogListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-
+  @ViewChild(MatSort) sort: MatSort;
   blogs = new MatTableDataSource<BlogListItem>(fakeBlogListData);
   displayedColumns: string[] = ['title', 'recommended', 'published', 'updateTime'];
 
@@ -24,6 +25,7 @@ export class BlogListComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.blogs.paginator = this.paginator;
+    this.blogs.sort = this.sort;
   }
 
   ngOnInit(): void {
