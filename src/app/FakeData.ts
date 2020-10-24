@@ -1,4 +1,4 @@
-interface Category {
+export interface Category {
   id: number;
   name: string;
 }
@@ -13,3 +13,19 @@ export let fakeCategoryData: Category[] = [
 ];
 
 
+export interface BlogListItem {
+  id: number;
+  title: string;
+  recommended: boolean;
+  published: boolean;
+  updateTime: Date;
+
+}
+
+
+export let fakeBlogListData: BlogListItem[] = [
+  {id: 0, title: "blog1", recommended: true, published: false, updateTime: new Date()},
+  {id: 2, title: "blog2", recommended: false, published: false, updateTime: new Date()},
+  {id: 3, title: "blog3", recommended: true, published: false, updateTime: new Date()},
+  {id: 4, title: "blog4", recommended: false, published: false, updateTime: new Date()},
+];

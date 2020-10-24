@@ -6,6 +6,9 @@ import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreServic
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.scss']
 })
+
+
+
 export class BlogListComponent implements OnInit {
 
   constructor(private topBarStoreService: TopBarStoreService) {
