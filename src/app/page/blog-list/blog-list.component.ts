@@ -5,6 +5,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatSort} from "@angular/material/sort";
 import {FormBuilder, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-blog-list',
@@ -32,7 +33,7 @@ export class BlogListComponent implements OnInit, AfterViewInit {
   blogs = new MatTableDataSource<BlogListItem>(fakeBlogListData);
   displayedColumns: string[] = ['title', 'recommended', 'published', 'updateTime'];
 
-  constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder) {
+  constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder, private router: Router) {
     topBarStoreService.updateTopState(true, false, false, true);
 
   }
@@ -50,4 +51,7 @@ export class BlogListComponent implements OnInit, AfterViewInit {
     // TODO
   }
 
+  blogAddPage(): void {
+    this.router.navigateByUrl('/blogadd');
+  }
 }
