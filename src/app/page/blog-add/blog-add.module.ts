@@ -4,7 +4,7 @@ import {BlogAddComponent} from './blog-add.component';
 import {RouterModule, Routes} from "@angular/router";
 import {CategoryComponent} from "../category-list/category.component";
 import {EditorModule} from "primeng/editor";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
@@ -29,7 +29,8 @@ const appRoutes: Routes = [
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule
   ]
 })
 export class BlogAddModule {

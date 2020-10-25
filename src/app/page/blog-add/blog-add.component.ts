@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
 import {Base64Service} from "../../utility/base64.service";
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-blog-add',
@@ -18,6 +19,16 @@ export class BlogAddComponent implements OnInit {
     'typ5',
   ];
 
+  form = this.fb.group({
+    title: [''],
+    content: [''],
+    type: [''],
+    recommend: false,
+    from_other_people: false,
+    like: false,
+    commentable: false,
+  });
+
   picture: string = null;
 
   private base64Head = 'data:image/jpeg;base64,';
@@ -32,11 +43,19 @@ export class BlogAddComponent implements OnInit {
 
   }
 
-  constructor(private topBarStoreService: TopBarStoreService, private base64Service: Base64Service) {
+  constructor(private topBarStoreService: TopBarStoreService, private base64Service: Base64Service, private fb: FormBuilder) {
     topBarStoreService.updateTopState(true, false, false, true);
   }
 
   ngOnInit(): void {
   }
 
+  save(): void {
+    console.log(this.form.value);
+
+  }
+
+  post(): void {
+
+  }
 }

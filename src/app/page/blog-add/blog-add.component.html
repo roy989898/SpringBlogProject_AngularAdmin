@@ -1,17 +1,17 @@
 <div class="container">
 
-  <form action="" class="example-form">
+  <form action="" class="example-form" [formGroup]="form">
     <mat-form-field class="form-field">
       <mat-label>Title</mat-label>
-      <input matInput type="text"/>
+      <input matInput type="text" formControlName="title"/>
 
     </mat-form-field>
-    <p-editor [(ngModel)]="content" [style]="{'height':'400px'}"></p-editor>
+    <p-editor [(ngModel)]="content" [style]="{'height':'400px'}" formControlName="content"></p-editor>
 
     <mat-form-field class="form-field">
       <mat-label>Type</mat-label>
       <!--      <input matInput type="text" />-->
-      <mat-select>
+      <mat-select formControlName="type">
         <mat-option [value]="type" *ngFor="let type of typeOptions">{{type}}</mat-option>
       </mat-select>
 
@@ -19,23 +19,23 @@
     </mat-form-field>
     <img [src]="pictureBase64" class="preview-image" *ngIf="picture">
     <div class="form-field">
-      <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none"/>
+      <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none" />
       <button type="button" mat-raised-button color="primary" (click)="pictureInput.click()">
         Picture
       </button>
     </div>
 
     <div class="my-1">
-      <mat-checkbox class="ml-1">recommend</mat-checkbox>
-      <mat-checkbox class="ml-1">from other people</mat-checkbox>
-      <mat-checkbox class="ml-1">like</mat-checkbox>
-      <mat-checkbox class="ml-1">commentable</mat-checkbox>
+      <mat-checkbox class="ml-1" formControlName="recommend">recommend</mat-checkbox>
+      <mat-checkbox class="ml-1" formControlName="from_other_people">from other people</mat-checkbox>
+      <mat-checkbox class="ml-1" formControlName="like">like</mat-checkbox>
+      <mat-checkbox class="ml-1" formControlName="commentable">commentable</mat-checkbox>
     </div>
 
   </form>
 
-  <button class="mt-1 mr-1" mat-raised-button color="primary">Save</button>
-  <button class="mt-1" mat-raised-button color="primary">Post</button>
+  <button class="mt-1 mr-1" mat-raised-button color="primary" (click)="save()">Save</button>
+  <button class="mt-1" mat-raised-button color="primary" (click)="post()">Post</button>
 
 </div>
 
