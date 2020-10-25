@@ -38,7 +38,6 @@ import {QuillModule} from 'ngx-quill';
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     NgbModule,
     MatMenuModule,
-    QuillModule.forRoot(),
   ],
 
   providers: [],
