@@ -9,6 +9,7 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatButtonModule} from "@angular/material/button";
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 const appRoutes: Routes = [
   {path: '', component: BlogAddComponent},
@@ -27,7 +28,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCheckboxModule
   ]
 })
 export class BlogAddModule {
