@@ -3,6 +3,12 @@ import {CommonModule} from '@angular/common';
 import {BlogAddComponent} from './blog-add.component';
 import {RouterModule, Routes} from "@angular/router";
 import {CategoryComponent} from "../category-list/category.component";
+import {EditorModule} from "primeng/editor";
+import {FormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatButtonModule} from "@angular/material/button";
 
 const appRoutes: Routes = [
   {path: '', component: BlogAddComponent},
@@ -15,7 +21,13 @@ const appRoutes: Routes = [
   declarations: [BlogAddComponent],
   imports: [
     RouterModule.forChild(appRoutes),
-    CommonModule
+    CommonModule,
+    EditorModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule
   ]
 })
 export class BlogAddModule {

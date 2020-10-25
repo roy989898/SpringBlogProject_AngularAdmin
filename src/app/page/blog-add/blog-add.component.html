@@ -1,1 +1,31 @@
-<p>blog-add works!</p>
+<div class="container">
+
+  <form action="" class="example-form">
+    <mat-form-field class="form-field">
+      <mat-label>Title</mat-label>
+      <input matInput type="text"/>
+
+    </mat-form-field>
+    <p-editor [(ngModel)]="content" [style]="{'height':'400px'}"></p-editor>
+
+    <mat-form-field class="form-field">
+      <mat-label>Type</mat-label>
+      <!--      <input matInput type="text" />-->
+      <mat-select>
+        <mat-option [value]="type" *ngFor="let type of typeOptions">{{type}}</mat-option>
+      </mat-select>
+
+
+    </mat-form-field>
+    <img [src]="pictureBase64" class="preview-image" *ngIf="picture">
+    <div class="form-field">
+      <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none"/>
+      <button type="button" mat-raised-button color="primary" (click)="pictureInput.click()">
+        Picture
+      </button>
+    </div>
+  </form>
+
+
+</div>
+

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
 import {FormBuilder} from '@angular/forms';
+import {Base64Service} from "../../utility/base64.service";
 
 @Component({
   selector: 'app-about-me',
@@ -29,7 +30,7 @@ export class AboutMeComponent implements OnInit {
     about: [''],
   });
 
-  constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder) {
+  constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder, private base64Service: Base64Service) {
     topBarStoreService.updateTopState(false, false, true, true);
   }
 
@@ -53,41 +54,16 @@ export class AboutMeComponent implements OnInit {
   }
 
   async pictureSelect(evt): Promise<void> {
-    const result = await this.getBase64(evt);
+    const result = await this.base64Service.getBase64(evt);
     this.picture = result;
 
   }
 
   async iconSelect(evt): Promise<void> {
-    const result = await this.getBase64(evt);
+    const result = await this.base64Service.getBase64(evt);
     this.icon = result;
 
   }
 
-  getBase64(event): Promise<string> {
-    return new Promise((resolve, reject) => {
-      const me = this;
-      const file = event.target.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        // me.modelvalue = reader.result;
-        // console.log(reader.result);
-
-        // data:image/jpeg;base64,
-        let result = reader.result as string;
-        result = result.replace(this.base64Head, '');
-        // console.log(reader.result);
-        // @ts-ignore
-        resolve(result);
-      };
-      reader.onerror = error => {
-        // console.log('Error: ', error);
-        reject(error);
-      };
-    });
-
-
-  }
 
 }
