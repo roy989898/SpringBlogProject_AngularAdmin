@@ -21,7 +21,7 @@ export class BlogAddComponent implements OnInit {
 
   form = this.fb.group({
     title: [''],
-    content: ['AAAA'],
+    content: [''],
     type: [''],
     recommend: false,
     from_other_people: false,
@@ -52,6 +52,7 @@ export class BlogAddComponent implements OnInit {
 
   save(): void {
     console.log(this.form.value);
+    //  picture
 
   }
 
