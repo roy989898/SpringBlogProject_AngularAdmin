@@ -4,6 +4,7 @@ import {BlogListItem, fakeBlogListData} from "../../FakeData";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatSort} from "@angular/material/sort";
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-blog-list',
@@ -15,10 +16,23 @@ import {MatSort} from "@angular/material/sort";
 export class BlogListComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+
+  blogSearchForm = this.fb.group({
+    title: [''],
+    type: [''],
+  });
+  typeOptions = [
+    'typ1',
+    'typ2',
+    'typ3',
+    'typ4',
+    'typ5',
+  ];
+
   blogs = new MatTableDataSource<BlogListItem>(fakeBlogListData);
   displayedColumns: string[] = ['title', 'recommended', 'published', 'updateTime'];
 
-  constructor(private topBarStoreService: TopBarStoreService) {
+  constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder) {
     topBarStoreService.updateTopState(true, false, false, true);
 
   }
@@ -29,6 +43,11 @@ export class BlogListComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+  }
+
+  blogSearch(): void {
+    console.log(this.blogSearchForm.value);
+    // TODO
   }
 
 }
