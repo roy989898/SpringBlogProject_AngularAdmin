@@ -6,7 +6,8 @@
       <input matInput type="text" formControlName="title"/>
 
     </mat-form-field>
-    <p-editor [(ngModel)]="content" [style]="{'height':'400px'}" formControlName="content"></p-editor>
+    <quill-editor [styles]="{height: '400px'}" formControlName="content"></quill-editor>
+<!--    <p-editor [(ngModel)]="content" [style]="{'height':'400px'}" formControlName="content"></p-editor>-->
 
     <mat-form-field class="form-field">
       <mat-label>Type</mat-label>

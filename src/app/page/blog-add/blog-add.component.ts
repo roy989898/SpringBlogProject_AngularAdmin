@@ -21,7 +21,7 @@ export class BlogAddComponent implements OnInit {
 
   form = this.fb.group({
     title: [''],
-    content: [''],
+    content: ['AAAA'],
     type: [''],
     recommend: false,
     from_other_people: false,

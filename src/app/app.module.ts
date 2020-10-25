@@ -15,9 +15,10 @@ import {AdminTopBarComponent} from './component/admin-top-bar/admin-top-bar.comp
 import {IconNameComponent} from './component/ionn-name/icon-name.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AtomSpinnerModule, BreedingRhombusSpinnerModule} from 'angular-epic-spinners';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AboutMeComponent } from './page/about-me/about-me.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {AboutMeComponent} from './page/about-me/about-me.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {QuillModule} from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {MatMenuModule} from '@angular/material/menu';
     BreedingRhombusSpinnerModule,
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     NgbModule,
-    MatMenuModule
+    MatMenuModule,
+    QuillModule.forRoot(),
   ],
 
   providers: [],
