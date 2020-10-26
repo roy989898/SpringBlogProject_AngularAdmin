@@ -19,6 +19,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AboutMeComponent} from './page/about-me/about-me.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {QuillModule} from 'ngx-quill';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {QuillModule} from 'ngx-quill';
     environment.production ? [] : AkitaNgDevtools.forRoot(),
     NgbModule,
     MatMenuModule,
+    ToastModule
   ],
 
   providers: [],
