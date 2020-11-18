@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreService";
-import {Base64Service} from "../../utility/base64.service";
-import {FormBuilder} from "@angular/forms";
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {TopBarStoreService} from '../../akita/TopBarStateStore/TopBarStoreService';
+import {Base64Service} from '../../utility/base64.service';
+import {FormBuilder} from '@angular/forms';
+import {Observable, of} from 'rxjs';
 
 @Component({
   selector: 'app-blog-add',
@@ -10,7 +11,7 @@ import {FormBuilder} from "@angular/forms";
 })
 export class BlogAddComponent implements OnInit {
 
-  content = "AAAA";
+  content = 'AAAA';
   typeOptions = [
     'typ1',
     'typ2',
@@ -18,6 +19,8 @@ export class BlogAddComponent implements OnInit {
     'typ4',
     'typ5',
   ];
+
+  tagOptions$: Observable<string[]>;
 
   form = this.fb.group({
     title: [''],
@@ -27,6 +30,7 @@ export class BlogAddComponent implements OnInit {
     from_other_people: false,
     like: false,
     commentable: false,
+    tag: [''],
   });
 
   picture: string = null;
@@ -48,6 +52,13 @@ export class BlogAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.tagOptions$ = of([
+      'tag1',
+      'tag2',
+      'tag3',
+      'may3',
+    ]);
   }
 
   save(): void {
@@ -57,6 +68,11 @@ export class BlogAddComponent implements OnInit {
   }
 
   post(): void {
+
+  }
+
+  onInputTag(value: any): void {
+    console.log(value.target.value);
 
   }
 }

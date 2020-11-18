@@ -7,7 +7,7 @@
 
     </mat-form-field>
     <quill-editor [styles]="{height: '400px'}" formControlName="content"></quill-editor>
-<!--    <p-editor [(ngModel)]="content" [style]="{'height':'400px'}" formControlName="content"></p-editor>-->
+    <!--    <p-editor [(ngModel)]="content" [style]="{'height':'400px'}" formControlName="content"></p-editor>-->
 
     <mat-form-field class="form-field">
       <mat-label>Type</mat-label>
@@ -18,9 +18,25 @@
 
 
     </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <input type="text"
+             placeholder="Pick one"
+             aria-label="Number"
+             #tagInput
+             matInput
+             formControlName="tag"
+             (input)="onInputTag($event)"
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of tagOptions$ |async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
     <img [src]="pictureBase64" class="preview-image" *ngIf="picture">
     <div class="form-field">
-      <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none" />
+      <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none"/>
       <button type="button" mat-raised-button color="primary" (click)="pictureInput.click()">
         Picture
       </button>
