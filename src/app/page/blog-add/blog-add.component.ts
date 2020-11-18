@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {TopBarStoreService} from '../../akita/TopBarStateStore/TopBarStoreService';
 import {Base64Service} from '../../utility/base64.service';
 import {FormBuilder} from '@angular/forms';
@@ -11,15 +11,14 @@ import {map} from "rxjs/operators";
   styleUrls: ['./blog-add.component.scss']
 })
 export class BlogAddComponent implements OnInit {
-
+  @ViewChild("tagInput") tagInput: ElementRef;
   content = 'AAAA';
   typeOptions = [
     'typ1',
     'typ2',
-    'typ3',
-    'typ4',
-    'typ5',
   ];
+
+  currentTag: string[] = [];
 
   tagOptions$: Observable<string[]>;
 
@@ -91,6 +90,11 @@ export class BlogAddComponent implements OnInit {
   tagKeyPress($event: KeyboardEvent): void {
     if ($event.keyCode === 32) {
       //  TODO
+      console.log('tagKeyPress');
+      // console.log(this.tagInput.nativeElement);
+      const currentValue = this.tagInput.nativeElement.value;
+      this.currentTag.push(currentValue);
+      this.tagInput.nativeElement.value = '';
 
     }
 

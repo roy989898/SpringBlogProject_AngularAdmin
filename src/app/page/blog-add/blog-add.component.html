@@ -19,21 +19,31 @@
 
     </mat-form-field>
 
-    <mat-form-field class="form-field">
-      <input type="text"
-             placeholder="Tag"
-             aria-label="Number"
-             #tagInput
-             matInput
-             (input)="onInputTag($event)"
-             (keypress)="tagKeyPress($event)"
-             [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of tagOptions$ |async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
+
+
+    <div class="flex-row flex-wrap align-items-start">
+      <button mat-flat-button color="warn" class="m-1" *ngFor="let tag of currentTag">{{tag}}</button>
+      <mat-form-field class="flex-grow-1">
+        <input type="text"
+               placeholder="Tag"
+               aria-label="Number"
+               #tagInput
+               matInput
+               (input)="onInputTag($event)"
+               (keypress)="tagKeyPress($event)"
+               [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of tagOptions$ |async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+      <!--   <button mat-flat-button color="warn" class="m-1">Warn</button>
+         <button mat-flat-button color="warn">Warn</button>
+         <button mat-flat-button color="warn">Warn</button>
+         <button mat-flat-button color="warn">Warn</button>-->
+    </div>
+
     <img [src]="pictureBase64" class="preview-image" *ngIf="picture">
     <div class="form-field">
       <input #pictureInput type="file" accept="image/*" (change)="pictureSelect($event)" style="display: none"/>
