@@ -99,4 +99,12 @@ export class BlogAddComponent implements OnInit {
     }
 
   }
+
+  deleteTag($event: string): void {
+    // console.log($event);
+    this.currentTag = this.currentTag.filter((v, i, array) => {
+      return v !== $event;
+    });
+
+  }
 }

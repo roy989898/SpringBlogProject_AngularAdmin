@@ -22,7 +22,7 @@
 
 
     <div class="flex-row flex-wrap align-items-start">
-      <button mat-flat-button color="warn" class="m-1" *ngFor="let tag of currentTag">{{tag}}</button>
+      <button mat-flat-button color="warn" class="m-1" *ngFor="let tag of currentTag" (click)="deleteTag(tag)">{{tag}}</button>
       <mat-form-field class="flex-grow-1">
         <input type="text"
                placeholder="Tag"
