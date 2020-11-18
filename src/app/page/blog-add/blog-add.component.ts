@@ -1,8 +1,9 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TopBarStoreService} from '../../akita/TopBarStateStore/TopBarStoreService';
 import {Base64Service} from '../../utility/base64.service';
 import {FormBuilder} from '@angular/forms';
 import {Observable, of} from 'rxjs';
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-blog-add',
@@ -53,12 +54,7 @@ export class BlogAddComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.tagOptions$ = of([
-      'tag1',
-      'tag2',
-      'tag3',
-      'may3',
-    ]);
+    // this.tagOptions$ = of(this.typeOptions);
   }
 
   save(): void {
@@ -72,7 +68,21 @@ export class BlogAddComponent implements OnInit {
   }
 
   onInputTag(value: any): void {
-    console.log(value.target.value);
+    // console.log(value.target.value);
+    const searchKey: string = value.target.value;
+    if (searchKey === '') {
+      this.tagOptions$ = of([]);
+    } else {
+      this.tagOptions$ = of(this.typeOptions).pipe(
+        map((types) => {
+
+          return types.filter((type, index, array) => {
+            return type.includes(searchKey);
+          });
+        })
+      );
+    }
+
 
   }
 }
