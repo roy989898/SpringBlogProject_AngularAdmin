@@ -68,7 +68,9 @@ export class BlogAddComponent implements OnInit {
   }
 
   onInputTag(value: any): void {
-    // console.log(value.target.value);
+    const keyEnter = value.data;
+    /*  console.log(keyEnter);
+      console.log(keyEnter.keyCode);*/
     const searchKey: string = value.target.value;
     if (searchKey === '') {
       this.tagOptions$ = of([]);
@@ -83,6 +85,14 @@ export class BlogAddComponent implements OnInit {
       );
     }
 
+
+  }
+
+  tagKeyPress($event: KeyboardEvent): void {
+    if ($event.keyCode === 32) {
+      //  TODO
+
+    }
 
   }
 }
