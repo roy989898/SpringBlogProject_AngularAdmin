@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-edit-category',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditCategoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<EditCategoryComponent>) {
+  }
 
   ngOnInit(): void {
   }

@@ -5,14 +5,15 @@
 
 
   <form class="example-form" [formGroup]="categoryForm">
-    <mat-form-field >
+    <mat-form-field>
       <mat-label>Category</mat-label>
       <input matInput type="text" formControlName="category"/>
 
     </mat-form-field>
 
 
-    <button class="ml-1" mat-raised-button color="primary" [disabled]="!categoryForm.valid" (click)="addClick()">Add</button>
+    <button class="ml-1" mat-raised-button color="primary" [disabled]="!categoryForm.valid" (click)="addClick()">Add
+    </button>
   </form>
 
 
@@ -37,8 +38,8 @@
       <th mat-header-cell *matHeaderCellDef> Operation</th>
       <td mat-cell *matCellDef="let element">
         <div>
-          <button mat-raised-button color="primary">Edit</button>
-          <button mat-raised-button color="warn" class="ml-1">Del</button>
+          <button mat-raised-button color="primary" (click)="editClick(element)">Edit</button>
+          <button mat-raised-button color="warn" class="ml-1" (click)="deleteClick(element)">Del</button>
         </div>
       </td>
     </ng-container>
