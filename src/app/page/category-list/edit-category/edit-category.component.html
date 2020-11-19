@@ -1,1 +1,10 @@
-<p>edit-category works!</p>
+<mat-form-field class="example-full-width">
+  <mat-label>Category name</mat-label>
+  <input matInput placeholder="Ex. Pizza" [(ngModel)]="newNamme">
+</mat-form-field>
+
+
+<div class="d-flex flex-row">
+  <button mat-button (click)="cancelClick()">Cancel</button>
+  <button mat-button color="accent" (click)="changeClick()">Change</button>
+</div>

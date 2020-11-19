@@ -50,12 +50,23 @@ export class CategoryComponent implements OnInit {
     //  TODO
     console.log(element);
     const dialogRef = this.dialog.open(EditCategoryComponent, {
-      width: '250px',
-      data: {}
+      data: element
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      // console.log('The dialog was closed');
+      console.log(result);
+
+      if (result !== undefined && result.id !== undefined && result.name !== undefined) {
+        this.categorys.forEach((category) => {
+          if (category.id === result.id) {
+            category.name = result.name;
+          }
+        });
+
+      } else {
+
+      }
     });
 
   }
