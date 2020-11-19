@@ -10,6 +10,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
+import { EditCategoryComponent } from './edit-category/edit-category.component';
 
 const appRoutes: Routes = [
   {path: '', component: CategoryComponent},
@@ -19,7 +20,7 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CategoryComponent],
+  declarations: [CategoryComponent, EditCategoryComponent],
   imports: [
     CommonModule,
     EditorModule,
