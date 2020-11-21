@@ -25,7 +25,8 @@ import {ToastModule} from 'primeng/toast';
   declarations: [
     AppComponent,
     AdminTopBarComponent,
-    IconNameComponent
+    IconNameComponent,
+
   ],
   imports: [
     BrowserModule,

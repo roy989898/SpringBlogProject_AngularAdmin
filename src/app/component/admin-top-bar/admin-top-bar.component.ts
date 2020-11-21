@@ -58,5 +58,6 @@ export class AdminTopBarComponent implements OnInit {
 
   tagCLick(): void {
     //  TODO
+    this.router.navigateByUrl('/tag');
   }
 }
