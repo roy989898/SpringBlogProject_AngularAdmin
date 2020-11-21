@@ -12,6 +12,19 @@ export let fakeCategoryData: Category[] = [
   {id: 4, name: "type4"},
 ];
 
+export interface Tag {
+  id: number;
+  name: string;
+}
+
+export let fakeTagData: Tag[] = [
+  {id: 0, name: "tag0"},
+  {id: 1, name: "tag1"},
+  {id: 2, name: "tag2"},
+  {id: 3, name: "tag3"},
+  {id: 4, name: "tag4"},
+];
+
 
 export interface BlogListItem {
   id: number;

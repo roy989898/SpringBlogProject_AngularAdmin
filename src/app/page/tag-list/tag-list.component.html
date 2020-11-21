@@ -1,1 +1,51 @@
-<p>tag-list works!</p>
+<div class="container">
+
+
+  <!--  TODO add a type input here-->
+
+
+  <form class="example-form" [formGroup]="tagForm">
+    <mat-form-field>
+      <mat-label>Tag</mat-label>
+      <input matInput type="text" formControlName="tag"/>
+
+    </mat-form-field>
+
+
+    <button class="ml-1" mat-raised-button color="primary" [disabled]="!tagForm.valid" (click)="addClick()">Add
+    </button>
+  </form>
+
+
+  <table mat-table [dataSource]="tags" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id</th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="operation">
+      <th mat-header-cell *matHeaderCellDef> Operation</th>
+      <td mat-cell *matCellDef="let element">
+        <div>
+          <button mat-raised-button color="primary" (click)="editClick(element)">Edit</button>
+          <button mat-raised-button color="warn" class="ml-1" (click)="deleteClick(element)">Del</button>
+        </div>
+      </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

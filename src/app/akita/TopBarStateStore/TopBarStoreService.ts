@@ -11,12 +11,13 @@ export class TopBarStoreService {
   }
 
 
-  updateTopState(blogBtOn: boolean, CategoryBtOn: boolean, AboutMeBtOn: boolean, topBarShow: boolean): void {
+  updateTopState(blogBtOn: boolean, CategoryBtOn: boolean, AboutMeBtOn: boolean, topBarShow: boolean, TagBtOn = false): void {
     this.topBarStore.update({
       blogBtOn,
       CategoryBtOn,
       AboutMeBtOn,
       topBarShow,
+      TagBtOn
     });
 
   }
