@@ -4,6 +4,7 @@ import {TopBarStoreService} from "../../akita/TopBarStateStore/TopBarStoreServic
 import {FormBuilder, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {EditCategoryComponent} from "../category-list/edit-category/edit-category.component";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-tag-list',
@@ -13,6 +14,8 @@ import {EditCategoryComponent} from "../category-list/edit-category/edit-categor
 export class TagListComponent implements OnInit {
 
   tags = fakeTagData;
+  dataSource = new MatTableDataSource<Tag>();
+
   displayedColumns: string[] = ['id', 'name', 'operation'];
   tagForm = this.fb.group({
     tag: ['', [Validators.required]],
@@ -20,6 +23,7 @@ export class TagListComponent implements OnInit {
 
   constructor(private topBarStoreService: TopBarStoreService, private fb: FormBuilder, public dialog: MatDialog) {
     topBarStoreService.updateTopState(false, false, false, true, true);
+    this.dataSource.data = this.tags;
   }
 
   ngOnInit(): void {
@@ -60,5 +64,7 @@ export class TagListComponent implements OnInit {
     const newTag: Tag = {name: this.tagForm.value.tag, id: this.tags[this.tags.length - 1].id + 1};
     this.tags.push(newTag);
     console.log(this.tags);
+    this.dataSource.data = this.tags;
+    this.tagForm.reset();
   }
 }
