@@ -10,6 +10,7 @@ export class TopBarQuery extends Query<TopBarState> {
   topBarDisplay$ = this.select('topBarShow');
   blogBtOn$ = this.select('blogBtOn');
   categoryBtOn$ = this.select('CategoryBtOn');
+  TagBtOn$ = this.select('TagBtOn');
   aboutMeBtOn$ = this.select('AboutMeBtOn');
 
   constructor(protected store: TopBarStore) {

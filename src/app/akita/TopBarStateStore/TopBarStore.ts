@@ -4,6 +4,7 @@ import {Injectable} from "@angular/core";
 export interface TopBarState {
   blogBtOn: boolean;
   CategoryBtOn: boolean;
+  TagBtOn: boolean;
   AboutMeBtOn: boolean;
   topBarShow: boolean;
 }
@@ -12,6 +13,7 @@ export function createInitialState(): TopBarState {
   return {
     blogBtOn: false,
     CategoryBtOn: false,
+    TagBtOn: false,
     AboutMeBtOn: false,
     topBarShow: false,
   };
